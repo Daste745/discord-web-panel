@@ -25,14 +25,12 @@
                 <span>Your servers</span>
             </div>
 
-            {% for guild in guilds if guild.owner %}
+            {% for guild in guilds if (guild.permissions.__and__(268435456)) == 268435456 %}
             <label class="section">
                 <img src="{{ guild.icon_url }}"
                      alt="Server icon">
                 <span>{{ guild.name }}</span>
-                <input type="button" onclick="for (element of document.getElementsByClassName('section selected')) { 
-                                              element.className = 'section' };
-                                              this.parentElement.className += ' selected';">
+                <input type="button">
             </label>
             {% endfor %}
         </div>
