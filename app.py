@@ -1,6 +1,6 @@
 import json
 import os
-from flask import Flask, redirect, url_for
+from flask import Flask, redirect, url_for, render_template
 from flask_dance.contrib.discord import make_discord_blueprint, discord
 
 with open("config.json") as f:
@@ -26,7 +26,7 @@ def index():
         return redirect(url_for("discord.login"))
     resp = discord.get("/api/v6/users/@me")
     user = json.loads(resp.content)
-    return f"Hi there {user['username']}#{user['discriminator']}!"
+    return render_template("index.html")
 
 
 if __name__ == "__main__":
