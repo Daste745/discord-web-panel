@@ -1,3 +1,4 @@
 server.py
 website.code-workspace
 \.idea
+backend/config\.json
