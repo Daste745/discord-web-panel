@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Discord Web Panel</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="switch.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="index.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div id="sidebar" class="column">
+        <div class="column-header">Panel</div>
+
+        <div class="section">
+            <img src="https://cdn.discordapp.com/avatars/195935967440404480/a1f820ed70f25e2a8d4a40d25dd77842.webp?size=64"
+                alt="Avatar">
+            <span>Logged in as Predator#4682</span>
+        </div>
+
+        <div id="server-list">
+            <div class="section section-divider">
+                <span>Your servers</span>
+            </div>
+            <div class="section">
+                <img src="https://cdn.discordapp.com/icons/211261411119202305/a_f4c54a5426e9deb33c45c69db6ed0c13.gif?size=64"
+                    alt="Server icon">
+                <span>Strata Czasu</span>
+            </div>
+            <div class="section">
+                <img src="https://cdn.discordapp.com/icons/508748737934524427/2b8300c3ce84c61e3864c7f2784f3c3c.webp?size=64"
+                    alt="Server icon">
+                <span>Fora</span>
+            </div>
+            <div class="section">
+                <img src="https://cdn.discordapp.com/icons/342022299957854220/5c85e7d6109fb267809f212c83993f69.png?size=64"
+                    alt="Server icon">
+                <span>Piwnica</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="middle" class="column">
+        <div class="column-header">
+            <span>Roles</span>
+            <button id="select-all-roles-button">Select all</button>
+        </div>
+
+        <div id="section-sortable">
+            <div class="section">
+                <div class="role-color">#00ffbb</div>
+                <span>Administrator</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#ffffff</div>
+                <span>Head Moderator</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#ff00aa</div>
+                <span>Support Team</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#66bbaa</div>
+                <span>Chat Moderator</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#12baaa</div>
+                <span>Voicechat Moderator</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#0C6ECF</div>
+                <span>Terraria</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#0C6ECF</div>
+                <span>Minecraft</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#0C6ECF</div>
+                <span>Overwatch</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#0C6ECF</div>
+                <span>Path of Exile</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#50ab23</div>
+                <span>Programming</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#50ab23</div>
+                <span>Anime and Manga</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#50ab23</div>
+                <span>Drawing</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="properties" class="column">
+        <div class="column-header">Settings</div>
+
+        <div class="properties-wrapper">
+            <div class="section">
+                <span>Name</span>
+                <input type="text">
+            </div>
+            <div class="section">
+                <span>Color</span>
+                <input type="text">
+            </div>
+        </div>
+        <div class="section section-divider">
+            <span>Permissions</span>
+        </div>
+        <div class="properties-wrapper">
+            <div class="section">
+                <span>Display role members separately from online members</span>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>Allow anyone to @mention this role</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>Administrator</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>View Audit Log</span>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>Manage Server</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    display: grid;
+    grid-gap: 2px;
+    grid-template-columns: 2fr 3fr 5fr;
+    grid-template-rows: auto;
+    grid-template-areas: "sidebar middle properties";
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+#sidebar {
+    grid-area: sidebar;
+    background-color: #2F3136;
+}
+
+#middle {
+    grid-area: middle;
+    background-color: #36393F;
+}
+
+#properties {
+    grid-area: properties;
+    background-color: #2F3136;
+}
+
+.column {
+    height: 100vh;
+    padding: 10px;
+}
+
+button {
+    float: right;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #292B2F;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+    border: 1px #000000 solid;
+    border-radius: 5px;
+}
+
+input {
+    float: right;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #2F3136;
+    padding: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+    border: 1px #000000 solid;
+    border-radius: 5px;
+}
+
+/* HEADER */
+
+.column-header {
+    display: flex;
+    font-size: 30px;
+    border-bottom: 2px solid #000000;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.column-header span {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+}
+
+/* GENERAL SECTION */
+
+.section {
+    display: flex;
+    background-color: #292B2F;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    margin: 7px;
+    /* margin-top: 7px;
+    margin-bottom: 7px; */
+    padding: 5px;
+}
+
+.section span {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 5px;
+}
+
+.section-divider {
+    margin-top: 20px;
+}
+
+.section-divider span {
+    font-size: 20px;
+    margin: auto;
+}
+
+.selected {
+    background-color: #47494c;
+}
+
+/* SIDEBAR COLUMN */
+
+#sidebar img {
+    border-radius: 50px;
+    float: left;
+    margin: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+/* MIDDLE COLUMN */
+
+#middle .section .role-color {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border: 1px #000000 solid;
+    border-radius: 50px;
+}
+
+/* PROPERTIES COLUMN */
+
+/* #properties .properties-wrapper {
+    display: flex;
+} */
+
+#properties .properties-wrapper .section {
+    /* width: 50%; */
+    display: flex;
+    /* margin-right: auto; */
+}
+
+#properties .properties-wrapper .section span {
+    margin-right: auto;
+}
