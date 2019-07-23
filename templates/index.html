@@ -26,11 +26,14 @@
             </div>
 
             {% for guild in guilds if guild.owner %}
-            <div class="section">
+            <label class="section">
                 <img src="{{ guild.icon_url }}"
                      alt="Server icon">
                 <span>{{ guild.name }}</span>
-            </div>
+                <input type="button" onclick="for (element of document.getElementsByClassName('section selected')) { 
+                                              element.className = 'section' };
+                                              this.parentElement.className += ' selected';">
+            </label>
             {% endfor %}
         </div>
     </div>
