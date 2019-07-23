@@ -17,18 +17,19 @@
 
         <div class="section">
             <img src="{{user.avatar_url}}"
-                alt="Avatar">
+                 alt="Avatar">
             <span>Logged in as {{user.username}}#{{user.discriminator}}</span>
         </div>
 
+        <div class="section section-divider">
+            <span>Your servers</span>
+        </div>
+
         <div id="server-list">
-            <div class="section section-divider">
-                <span>Your servers</span>
-            </div>
-            {% for guild in guilds %}
+            {% for guild in guilds if guild.owner %}
             <div class="section">
                 <img src="{{ guild.icon_url }}"
-                    alt="Server icon">
+                     alt="Server icon">
                 <span>{{ guild.name }}</span>
             </div>
             {% endfor %}
