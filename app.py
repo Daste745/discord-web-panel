@@ -27,10 +27,12 @@ app.register_blueprint(blueprint, url_prefix="/login")
 def index():
     if not discord.authorized:
         return redirect(url_for("discord.login"))
+
     user_resp = discord.get("/api/v6/users/@me")
     user = User.from_dict(json.loads(user_resp.content))
     guilds_resp = discord.get("/api/v6/users/@me/guilds")
     guilds = map(Guild.from_dict, json.loads(guilds_resp.content))
+
     return render_template("index.html", user=user, guilds=guilds)
 
 

@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from .parsing_utils import *
+
 AVATAR_BASE_URL = "https://cdn.discordapp.com/avatars"
 
 
@@ -27,7 +28,7 @@ class User:
         locale = from_str(obj.get("locale"))
         mfa_enabled = from_bool(obj.get("mfa_enabled"))
         flags = from_int(obj.get("flags"))
-        avatar = from_str(obj.get("avatar"))
+        avatar = from_str(obj.get("avatar") if obj.get("avatar") else "")
         discriminator = from_str(obj.get("discriminator"))
         snowflake = from_str(obj.get("id"))
         return User(username, locale, mfa_enabled, flags, avatar, discriminator, snowflake)

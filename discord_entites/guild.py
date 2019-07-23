@@ -3,6 +3,7 @@ from .parsing_utils import *
 
 ICON_BASE_URL = "https://cdn.discordapp.com/icons"
 
+
 @dataclass
 class Guild:
     owner: bool
@@ -23,7 +24,7 @@ class Guild:
         assert isinstance(obj, dict)
         owner = from_bool(obj.get("owner"))
         permissions = from_int(obj.get("permissions"))
-        icon = from_str(obj.get("icon"))
+        icon = from_str(obj.get("icon") if obj.get("icon") else "")
         snowflake = from_str(obj.get("id"))
         name = from_str(obj.get("name"))
         return Guild(owner, permissions, icon, snowflake, name)
