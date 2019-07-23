@@ -1,6 +1,7 @@
-server.py
-website.code-workspace
 \.idea
+
 config.json
 
 *.pyc
+
+venv/
