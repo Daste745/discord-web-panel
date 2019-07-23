@@ -12,20 +12,19 @@
 </head>
 
 <body>
+    <div id="sidebar-header" class="column-header">Panel</div>
     <div id="sidebar" class="column">
-        <div class="column-header">Panel</div>
+        <div id="server-list" class="scrollable-list">
+            <div class="section">
+                <img src="{{user.avatar_url}}"
+                     alt="Avatar">
+                <span>Logged in as {{user.username}}#{{user.discriminator}}</span>
+            </div>
 
-        <div class="section">
-            <img src="{{user.avatar_url}}"
-                 alt="Avatar">
-            <span>Logged in as {{user.username}}#{{user.discriminator}}</span>
-        </div>
+            <div class="section section-divider">
+                <span>Your servers</span>
+            </div>
 
-        <div class="section section-divider">
-            <span>Your servers</span>
-        </div>
-
-        <div id="server-list">
             {% for guild in guilds if guild.owner %}
             <div class="section">
                 <img src="{{ guild.icon_url }}"
@@ -36,13 +35,12 @@
         </div>
     </div>
 
+    <div id="middle-header" class="column-header">
+        <span>Roles</span>
+        <button id="select-all-roles-button">Select all</button>
+    </div>
     <div id="middle" class="column">
-        <div class="column-header">
-            <span>Roles</span>
-            <button id="select-all-roles-button">Select all</button>
-        </div>
-
-        <div id="section-sortable">
+        <div id="section-sortable" class="scrollable-list">
             <div class="section">
                 <div class="role-color">#00ffbb</div>
                 <span>Administrator</span>
@@ -94,10 +92,9 @@
         </div>
     </div>
 
+    <div id="properties-header" class="column-header">Settings</div>
     <div id="properties" class="column">
-        <div class="column-header">Settings</div>
-
-        <div class="properties-wrapper">
+        <div class="scrollable-list">
             <div class="section">
                 <span>Name</span>
                 <input type="text">
@@ -106,11 +103,11 @@
                 <span>Color</span>
                 <input type="text">
             </div>
-        </div>
-        <div class="section section-divider">
-            <span>Permissions</span>
-        </div>
-        <div class="properties-wrapper">
+
+            <div class="section section-divider">
+                <span>Permissions</span>
+            </div>
+
             <div class="section">
                 <span>Display role members separately from online members</span>
                 <label class="switch">
