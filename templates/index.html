@@ -16,30 +16,22 @@
         <div class="column-header">Panel</div>
 
         <div class="section">
-            <img src="https://cdn.discordapp.com/avatars/195935967440404480/a1f820ed70f25e2a8d4a40d25dd77842.webp?size=64"
+            <img src="{{user.avatar_url}}"
                 alt="Avatar">
-            <span>Logged in as Predator#4682</span>
+            <span>Logged in as {{user.username}}#{{user.discriminator}}</span>
         </div>
 
         <div id="server-list">
             <div class="section section-divider">
                 <span>Your servers</span>
             </div>
+            {% for guild in guilds %}
             <div class="section">
-                <img src="https://cdn.discordapp.com/icons/211261411119202305/a_f4c54a5426e9deb33c45c69db6ed0c13.gif?size=64"
+                <img src="{{ guild.icon_url }}"
                     alt="Server icon">
-                <span>Strata Czasu</span>
+                <span>{{ guild.name }}</span>
             </div>
-            <div class="section">
-                <img src="https://cdn.discordapp.com/icons/508748737934524427/2b8300c3ce84c61e3864c7f2784f3c3c.webp?size=64"
-                    alt="Server icon">
-                <span>Fora</span>
-            </div>
-            <div class="section">
-                <img src="https://cdn.discordapp.com/icons/342022299957854220/5c85e7d6109fb267809f212c83993f69.png?size=64"
-                    alt="Server icon">
-                <span>Piwnica</span>
-            </div>
+            {% endfor %}
         </div>
     </div>
 
