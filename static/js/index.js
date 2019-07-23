@@ -1,4 +1,3 @@
-
 (function () {
     const setColorsInRoles = () => {
         const roleColors = Array.from(document.getElementsByClassName("role-color"));
@@ -26,9 +25,17 @@
             })
         );
     };
+    const selectGuild = (event) => {
+        for (let element of document.querySelectorAll("#server-list > label")) {
+            element.classList.remove("selected")
+        }
+        event.target.parentElement.classList.add("selected")
+    };
     document.addEventListener("DOMContentLoaded", (_event) => {
         createSortables();
         setColorsInRoles();
+        Array.from(document.querySelectorAll("#server-list > label > input"))
+            .forEach((x) => x.addEventListener("click", selectGuild));
         document.getElementById("select-all-roles-button").addEventListener("click", selectAllRoles);
     });
 
