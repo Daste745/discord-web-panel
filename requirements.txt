@@ -1,3 +1,6 @@
+aiohttp
 discord.py
-Flask
-Flask-Dance
+sanic
+sanic-oauth
+sanic-session
+jinja2
