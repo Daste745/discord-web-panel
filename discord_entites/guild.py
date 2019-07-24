@@ -38,7 +38,7 @@ class Guild:
         return Guild(owner, permissions, icon, snowflake, name)
 
 
-async def get_guilds(provider: DiscordClient) -> Iterable[Guild]:
+async def get_guilds(provider: DiscordClient) -> Iterator[Guild]:
     guilds_dict = await _get_discord_guilds_dict(provider)
     return map(Guild.from_dict, guilds_dict)
 
