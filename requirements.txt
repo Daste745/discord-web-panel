@@ -3,4 +3,4 @@ discord.py
 sanic
 sanic-oauth
 sanic-session
-jinja2
+sanic-jinja2
