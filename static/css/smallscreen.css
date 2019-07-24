@@ -1,0 +1,55 @@
+html {
+    font-size: 12px;
+}
+
+#sidebar-header {
+    display: none;
+}
+
+#main {
+    grid-template-columns: 3fr 5fr;
+    grid-template-rows: auto 3rem 100%;
+    grid-template-areas:
+        "sidebar       sidebar"
+        "middle-header properties-header"
+        "middle        properties";
+    background-color: #000000;
+    height: 100vh;
+    width: 100vw;
+}
+
+#middle,
+#properties {
+    padding: .5rem;
+    margin-bottom: .5rem;
+    padding-bottom: 10.7rem;
+}
+
+.column-header {
+    border-top: 2px solid #000000;
+}
+
+#sidebar {
+    padding: .5rem;
+    display: flex;
+    height: unset;
+    margin-bottom: unset;
+}
+
+#server-list {
+    display: flex;
+}
+
+#server-list .section {
+    display: flex;
+    height: fit-content;
+}
+
+#server-list .section span {
+    float: right;
+    width: max-content;
+}
+
+#server-list .section:nth-last-child(1) {
+    margin-bottom: unset;
+}

@@ -3,15 +3,21 @@
 
 <head>
     <title>Discord Web Panel</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/switch.css') }}">
+
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
-    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/switch.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/widescreen.css') }}">
+    <link rel="stylesheet" media="screen and (max-width: 850px)" href="{{ url_for('static', filename='css/smallscreen.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 </head>
 
 <body>
+<div id="main">
     <div id="sidebar-header" class="column-header">Panel</div>
     <div id="sidebar" class="column">
         <div id="server-list" class="scrollable-list">
@@ -19,10 +25,6 @@
                 <img src="{{user.avatar_url}}"
                      alt="Avatar">
                 <span>Logged in as {{user.username}}#{{user.discriminator}}</span>
-            </div>
-
-            <div class="section section-divider">
-                <span>Your servers</span>
             </div>
 
             {% for guild in guilds if (guild.permissions.__and__(268435456)) == 268435456 %}
@@ -35,6 +37,7 @@
             {% endfor %}
         </div>
     </div>
+    <!--  sidebar  -->
 
     <div id="middle-header" class="column-header">
         <span>Roles</span>
@@ -92,6 +95,7 @@
             </div>
         </div>
     </div>
+    <!--  middle  -->
 
     <div id="properties-header" class="column-header">Settings</div>
     <div id="properties" class="column">
@@ -145,7 +149,8 @@
                 </label>
             </div>
         </div>
-    </div>
+    <!--  properties  -->
+</div>
 </body>
 
 </html>
