@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, List, Iterable
 
 
 def from_str(x: Any) -> str:
