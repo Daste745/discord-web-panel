@@ -1,28 +1,26 @@
-* {
-    padding: 0px;
-    margin: 0px;
-}
-
 ::-webkit-scrollbar{display:none !important; width:0px;}
 ::-webkit-scrollbar-button,::-webkit-scrollbar-track{display:none !important;}
 ::-webkit-scrollbar-thumb{display: none !important;}
 ::-webkit-scrollbar-track{display: none !important;}
 
+* {
+    padding: 0px;
+    margin: 0px;
+}
 
-/* GRID AREA AcSSIGNMENTS */
+html {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+}
 
 body {
-    display: grid;
-    grid-template-columns: 2fr 3fr 5fr;
-    grid-template-rows: 50px auto;
-    grid-template-areas:
-        "sidebar-header middle-header properties-header"
-        "sidebar middle properties";
-    font-family: 'Roboto', sans-serif;
-    color: #ffffff;
-    background-color: #000000;
     overflow: hidden;
+    display: block;
 }
+
+
+/* GRID AREA ASSIGNMENTS */
 
 #sidebar {
     grid-area: sidebar;
@@ -59,10 +57,10 @@ body {
 
 .column-header {
     display: flex;
-    font-size: 30px;
+    font-size: 2rem;
     border-bottom: 2px solid #000000;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .column-header span {
@@ -73,8 +71,10 @@ body {
 
 .column {
     display: block;
-    height: calc(100vh - 59px);
-    padding: 5px;
+    /* height: calc(100vh - 59px); */
+    margin-bottom: .5rem;
+    padding: .5rem;
+    padding-bottom: 3rem;
 }
 
 
@@ -82,13 +82,12 @@ body {
 
 button {
     float: right;
-    font-size: 16px;
     color: #ffffff;
     background-color: #292B2F;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+    padding-left: .6rem;
+    padding-right: .6rem;
     margin-top: auto;
     margin-bottom: auto;
     border: 1px #000000 solid;
@@ -97,10 +96,11 @@ button {
 
 input {
     float: right;
-    font-size: 16px;
     color: #ffffff;
     background-color: #2F3136;
-    padding: 5px;
+    padding: .3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     margin-top: auto;
     margin-bottom: auto;
     border: 1px #000000 solid;
@@ -115,24 +115,24 @@ input {
     background-color: #292B2F;
     border: 1px solid #000000;
     border-radius: 5px;
-    margin: 7px;
-    padding: 5px;
+    margin: .5rem;
+    padding: .3rem;
     transition: background-color .2s ease-in-out;
 }
 
 .section span {
     margin-top: auto;
     margin-bottom: auto;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: .7rem;
+    margin-right: .3rem;
 }
 
 .section-divider {
-    margin-top: 20px;
+    margin-top: 1rem;
 }
 
 .section-divider span {
-    font-size: 20px;
+    font-size: 1.5rem;
     margin: auto;
 }
 
@@ -169,10 +169,10 @@ input {
 /* MIDDLE COLUMN */
 
 #middle .section .role-color {
-    width: 20px;
-    min-width: 20px;
-    height: 20px;
-    margin-right: 5px;
+    width: 1.2rem;
+    min-width: 1.2rem;
+    height: 1.2rem;
+    margin-right: .1rem;
     border: 1px #000000 solid;
     border-radius: 50px;
 }
@@ -186,48 +186,4 @@ input {
 
 #properties .scrollable-list .section span {
     margin-right: auto;
-}
-
-
-@media screen and (max-width: 720px) {
-    #sidebar-header {
-        display: none;
-    }
-
-    body {
-        margin: 0;
-        padding: 0;
-        grid-template-columns: 3fr 5fr;
-        grid-template-rows: auto 50px 1fr;
-        grid-template-areas:
-            "sidebar sidebar"
-            "middle-header properties-header"
-            "middle properties";
-    }
-
-    .column {
-        padding: 5px;
-        height: calc(100vh - 50px - 1fr)
-    }
-
-    .column-header {
-        border-top: 2px solid #000000;
-    }
-
-    #sidebar {
-        display: flex;
-        height: unset;
-    }
-
-    #sidebar .section-divider {
-        display: none;
-    }
-
-    #server-list {
-        display: -webkit-box;
-    }
-
-    #section-sortable .section:last-of-type {
-        margin-bottom: 6rem;
-    }
 }
