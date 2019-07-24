@@ -24,9 +24,9 @@ jinja: SanicJinja2 = SanicJinja2(app)
 bot: Bot = Bot(command_prefix="!wp ")
 
 
-@bot.command(name="owo")
+@bot.command(name="ping")
 async def owo(ctx: discord.ext.commands.Context) -> None:
-    await ctx.send("uwu")
+    await ctx.send("pong")
 
 
 @app.route("/")
