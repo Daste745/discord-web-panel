@@ -13,6 +13,7 @@ from config import get_config, Config
 def get_app(name) -> Sanic:
     config: Config = get_config()
     app: Sanic = Sanic(name)
+    app.static('/static', './static')
     app.blueprint(oauth_blueprint)
     app.session_interface = InMemorySessionInterface()
 
