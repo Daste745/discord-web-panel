@@ -45,7 +45,7 @@ if __name__ == "__main__":
 
     executor: Executor
     with concurrent.futures.ThreadPoolExecutor() as executor:
-        executor.submit(bot.run, config.bot_token, register_sys_signals=False)
-        executor.submit(app.run, port=5000)
+        executor.submit(bot.run, config.bot_token)
+        executor.submit(app.run, port=5000, register_sys_signals=False)
 
 
