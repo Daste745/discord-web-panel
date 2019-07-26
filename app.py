@@ -41,11 +41,11 @@ if __name__ == "__main__":
         bot.run(config.bot_token)
 
     def run_sanic() -> None:
-        app.run(port=5000)
+        app.run(port=5000, register_sys_signals=False)
 
     executor: Executor
-    with concurrent.futures.ThreadPoolExecutor() as executor:
-        executor.submit(bot.run, config.bot_token)
-        executor.submit(app.run, port=5000, register_sys_signals=False)
+    with concurrent.futures.ProcessPoolExecutor() as executor:
+        executor.submit(run_bot)
+        executor.submit(run_sanic)
 
 
