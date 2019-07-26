@@ -6,8 +6,8 @@ from sanic_oauth.providers import DiscordClient
 
 from .parsing_utils import *
 
-AVATAR_BASE_URL = "https://cdn.discordapp.com/avatars"
-API_USER_URL = "https://discordapp.com/api/users/@me"
+AVATAR_BASE_URL: str = "https://cdn.discordapp.com/avatars"
+API_USER_URL: str = "https://discordapp.com/api/users/@me"
 
 
 @dataclass
@@ -45,7 +45,7 @@ async def get_user(provider: DiscordClient) -> User:
     return User.from_dict(await _get_user_dict(provider))
 
 
-async def _get_user_dict(provider: DiscordClient) -> dict:
+async def _get_user_dict(provider: DiscordClient) -> Dict[str, Union[str, int]]:
     response: ClientResponse = await provider.request("GET", API_USER_URL)
     if response.status != 200:
         raise HTTPBadRequest(

@@ -6,8 +6,8 @@ from sanic_oauth.providers import DiscordClient
 
 from .parsing_utils import *
 
-ICON_BASE_URL = "https://cdn.discordapp.com/icons"
-API_GUILDS_URL = "https://discordapp.com/api/users/@me/guilds"
+ICON_BASE_URL: str = "https://cdn.discordapp.com/icons"
+API_GUILDS_URL: str = "https://discordapp.com/api/users/@me/guilds"
 
 
 @dataclass
@@ -39,11 +39,11 @@ class Guild:
 
 
 async def get_guilds(provider: DiscordClient) -> Iterator[Guild]:
-    guilds_dict = await _get_discord_guilds_dict(provider)
+    guilds_dict: Dict[str, Union[str, int, bool]] = await _get_discord_guilds_dict(provider)
     return map(Guild.from_dict, guilds_dict)
 
 
-async def _get_discord_guilds_dict(provider: DiscordClient) -> dict:
+async def _get_discord_guilds_dict(provider: DiscordClient) -> Dict[str, Union[str, int, bool]]:
     response: ClientResponse = await provider.request("GET", API_GUILDS_URL)
     if response.status != 200:
         raise HTTPBadRequest(
