@@ -1,0 +1,6 @@
+aiohttp
+discord.py
+sanic
+sanic-oauth
+sanic-session
+sanic-jinja2

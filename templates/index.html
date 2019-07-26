@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Discord Web Panel</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/switch.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/widescreen.css') }}">
+    <link rel="stylesheet" media="screen and (max-width: 850px)" href="{{ url_for('static', filename='css/smallscreen.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</head>
+
+<body>
+<div id="main">
+    <div id="sidebar-header" class="column-header">
+        <span>Panel</span>
+        <button id="bot-invite-button">Invite Bot</button>
+    </div>
+    <div id="sidebar" class="column">
+        <div id="server-list" class="scrollable-list">
+            <div class="section">
+                <img src="{{user.avatar_url}}"
+                     alt="Avatar">
+                <span>Logged in as {{user.username}}#{{user.discriminator}}</span>
+            </div>
+
+            {% for guild in guilds if (guild.permissions.__and__(268435456)) == 268435456 %}
+            <label class="section">
+                <img src="{{ guild.icon_url }}"
+                     alt="Server icon">
+                <span>{{ guild.name }}</span>
+                <input type="button">
+            </label>
+            {% endfor %}
+        </div>
+    </div>
+    <!--  sidebar  -->
+
+    <div id="middle-header" class="column-header">
+        <span>Roles</span>
+        <button id="select-all-roles-button">Select all</button>
+    </div>
+    <div id="middle" class="column">
+        <div id="section-sortable" class="scrollable-list">
+            <div class="section">
+                <div class="role-color">#00ffbb</div>
+                <span>Administrator</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#ffffff</div>
+                <span>Head Moderator</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#ff00aa</div>
+                <span>Support Team</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#66bbaa</div>
+                <span>Chat Moderator</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#12baaa</div>
+                <span>Voicechat Moderator</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#0C6ECF</div>
+                <span>Terraria</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#0C6ECF</div>
+                <span>Minecraft</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#0C6ECF</div>
+                <span>Overwatch</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#0C6ECF</div>
+                <span>Path of Exile</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#50ab23</div>
+                <span>Programming</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#50ab23</div>
+                <span>Anime and Manga</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#50ab23</div>
+                <span>Drawing</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#00ffbb</div>
+                <span>Administrator</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#ffffff</div>
+                <span>Head Moderator</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#ff00aa</div>
+                <span>Support Team</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#66bbaa</div>
+                <span>Chat Moderator</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#12baaa</div>
+                <span>Voicechat Moderator</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#0C6ECF</div>
+                <span>Terraria</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#0C6ECF</div>
+                <span>Minecraft</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#0C6ECF</div>
+                <span>Overwatch</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#0C6ECF</div>
+                <span>Path of Exile</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#50ab23</div>
+                <span>Programming</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#50ab23</div>
+                <span>Anime and Manga</span>
+            </div>
+            <div class="section">
+                <div class="role-color">#50ab23</div>
+                <span>Drawing</span>
+            </div>
+        </div>
+    </div>
+    <!--  middle  -->
+
+    <div id="properties-header" class="column-header">Settings</div>
+    <div id="properties" class="column">
+        <div class="scrollable-list">
+            <div class="section">
+                <span>Name</span>
+                <input type="text">
+            </div>
+            <div class="section">
+                <span>Color</span>
+                <input type="text">
+            </div>
+
+            <div class="section section-divider">
+                <span>General Permissions</span>
+            </div>
+
+            <div class="section">
+                <span>Display role members separately from online members</span>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>Allow anyone to @mention this role</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>Administrator</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>View Audit Log</span>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>Manage Server</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>Kick Members</span>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>Ban Members</span>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>Create Instant Invite</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>Change Nickname</span>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>Manage Nicknames</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>Manage Emojis</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>Manage Webhooks</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>Read Text Channels & See Voice Channels</span>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="section section-divider">
+                <span>Text Permissions</span>
+            </div>
+
+            <div class="section">
+                <span>Send Messages</span>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>Send TTS Messages</span>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>Manage Messages</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>Embed Links</span>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>Attach Files</span>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>Read Message History</span>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>Mention Everyone</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>Use External Emojis</span>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>Add Reactions</span>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="section section-divider">
+                <span>Voice Permissions</span>
+            </div>
+
+            <div class="section">
+                <span>Connect</span>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>Speak</span>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>Mute Members</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>Deafen Members</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>Move Members</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>Use Voice Activity</span>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="section">
+                <span>Priority Speaker</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <!--  properties  -->
+</div>
+</body>
+
+</html>
