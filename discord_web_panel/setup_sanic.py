@@ -1,5 +1,3 @@
-from collections import defaultdict
-
 import aiohttp
 from sanic import Sanic
 from sanic.request import Request
@@ -7,7 +5,7 @@ from sanic.response import HTTPResponse
 from sanic_oauth.blueprint import oauth_blueprint
 from sanic_session import InMemorySessionInterface
 
-from config import get_config, Config
+from .config import get_config, Config
 
 
 def get_app(name) -> Sanic:

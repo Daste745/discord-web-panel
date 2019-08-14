@@ -1,6 +1,6 @@
 \.idea
 
-config.json
+discord_web_panel/config.json
 
 *.pyc
 

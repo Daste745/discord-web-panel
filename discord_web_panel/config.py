@@ -1,6 +1,6 @@
 import json
 from dataclasses import dataclass
-from discord_entites.parsing_utils import from_str, Any
+from .discord_entites.parsing_utils import from_str, Any
 
 
 @dataclass
