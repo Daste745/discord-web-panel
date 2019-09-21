@@ -29,7 +29,8 @@ async def owo(ctx: discord.ext.commands.Context) -> None:
 @app.route("/")
 @login_required(add_user_info=False)
 async def index(request: Request) -> HTTPResponse:
-    provider: DiscordClient = request.app.oauth_factory(**{'access_token': request['session']['token']})
+    provider: DiscordClient = request.app.oauth_factory(
+        **{'access_token': request['session']['token']})
     user: User = await get_user(provider)
     guilds: Iterator[Guild] = await get_guilds(provider)
     return jinja.render("index.html", request, user=user, guilds=guilds)
