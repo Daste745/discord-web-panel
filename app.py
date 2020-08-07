@@ -15,7 +15,7 @@ from discord_web_panel.setup_sanic import get_config, get_app, Config
 import discord
 from discord.ext.commands import Bot
 
-config: Config = get_config()
+config: Config = get_config("discord_web_panel/config.json")
 app: Sanic = get_app("discord_web_panel")
 jinja: SanicJinja2 = SanicJinja2(app)
 bot: Bot = Bot(command_prefix="!wp ")

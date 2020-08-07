@@ -21,6 +21,6 @@ class Config:
                       app_secret=app_secret)
 
 
-def get_config() -> Config:
-    with open("config.json") as f:
+def get_config(path: str) -> Config:
+    with open(path) as f:
         return Config.from_dict(json.load(f))
