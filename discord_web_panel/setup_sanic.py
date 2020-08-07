@@ -9,7 +9,7 @@ from .config import get_config, Config
 
 
 def get_app(name) -> Sanic:
-    config: Config = get_config()
+    config: Config = get_config("discord_web_panel/config.json")
     app: Sanic = Sanic(name)
     app.static('/static', './static')
     app.blueprint(oauth_blueprint)

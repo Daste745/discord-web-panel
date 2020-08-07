@@ -1,7 +1,7 @@
 # Discord Web Panel
 ### Administrative web panel for managing Discord servers
 
-This project is on hold and most of its components are just concept placeholders. Feel free to work on it and report any issues.
+Sanic-oauth is broken (because of dependency version problems), this project doesn't currently run. Further work is required to rewrite/fix the entire backend. Feel free to contribute to the project. Please don't open issues about sanic-oauth not working.
 
 ![Widescreen panel screenshot](https://i.imgur.com/VfDkc4Q.png "Widescreen panel")
 ![Smallscreen panel screenshot](https://i.imgur.com/owRsdDm.png "Smallscreen panel")
