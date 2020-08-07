@@ -1,7 +1,7 @@
-\.idea
+.idea/
+.vscode/
+venv/
 
 discord_web_panel/config.json
 
 *.pyc
-
-venv/
